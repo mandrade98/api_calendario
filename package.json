@@ -1,0 +1,8 @@
+{
+  "name": "api_calendario",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mandrade98/api_calendario.git",
+  "author": "Murilo Andrade <56371927+mandrade98@users.noreply.github.com>",
+  "license": "MIT"
+}
