@@ -1,12 +1,7 @@
 import { prisma, Prisma } from "@prisma/client"
-import e, { Request, Response } from "express"
-import { prismaClient } from "../copy/database/prismaClient"
-
-interface IUser {
-    fullName: string
-    birthDate?: Date
-    emailAddress: string
-}
+import { Request, Response } from "express"
+import { prismaClient } from "../database/prismaClient"
+import { IUser } from "../interfaces/User"
 
 export class UserController {
     async save(request: Request, response: Response) {
@@ -58,7 +53,7 @@ export class UserController {
                 return response.status(400).json({ status: 400, message: "E-mail informado não foi encontrado, tente outro", data: {} })
             }
 
-            const result = await prismaClient.user.delete({ where: { email_address: emailAddress } })
+            await prismaClient.user.delete({ where: { email_address: emailAddress } })
 
             return response.status(200).json({ status: 200, message: "Usuário deletado com sucesso", data: {} })
 
@@ -86,7 +81,7 @@ export class UserController {
                 return response.status(400).json({ status: 400, message: "E-mail informado não foi encontrado, tente outro", data: {} })
             }
 
-            const result = await prismaClient.user.updateMany({
+            await prismaClient.user.updateMany({
                 where: {
                     email_address: emailAddress
                 }
@@ -125,6 +120,5 @@ export class UserController {
             return response.status(500).json({ status: 500, message: "Algo não ocorreu bem por aqui", data: {} })
         }
     }
-
 
 }

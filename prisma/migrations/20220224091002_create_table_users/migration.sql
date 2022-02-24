@@ -2,9 +2,9 @@
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "full_name" TEXT NOT NULL,
-    "birth_date" DATE,
+    "birth_date" TIMESTAMP(3),
     "email_address" TEXT NOT NULL,
-    "created_at" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
