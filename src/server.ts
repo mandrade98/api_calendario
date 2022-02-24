@@ -1,7 +1,3 @@
-import express, { response } from 'express'
+import { app } from "./app";
 
-const app = express()
-
-app.get('/', (request, response) => response.json({ message: 'API CALENDARIO' }))
-
-app.listen('4000')
+app.listen('3000')
