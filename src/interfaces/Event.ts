@@ -1,5 +1,5 @@
 export interface IEvent {
-    name: string
-    description?: string
-    date: Date
+    name: string;
+    description?: string;
+    date: Date;
 }

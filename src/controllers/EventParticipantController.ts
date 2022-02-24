@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../database/prismaClient";
-import { IEventParticipant } from "../interfaces/EventParticipant";
-
-
-
+import { IEventParticipant } from '../interfaces/EventParticipant'
 export class EventParticipantController {
     async save(request: Request, response: Response) {
         const body = request.body as IEventParticipant
