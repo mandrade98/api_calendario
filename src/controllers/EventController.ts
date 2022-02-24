@@ -85,7 +85,7 @@ export class EventController {
                     where: { id_event: event?.id },
                 });
 
-            if (eventParticipant) {
+            if (eventParticipant.length > 0) {
                 return response.status(400).json({
                     status: 400,
                     message: "Não é possivel remover evento com participante",

@@ -90,7 +90,7 @@ export class UserController {
                     where: { id_user: user?.id },
                 });
 
-            if (eventParticipant) {
+            if (eventParticipant.length > 0) {
                 return response.status(400).json({
                     status: 400,
                     message: "Não é possivel remover participante de evento",
